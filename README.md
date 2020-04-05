@@ -24,12 +24,26 @@ This sprint challenge is divided up into three parts:  Hash tables coding, block
 
 Explain in detail the workings of a dynamic array:
 * What is the runtime complexity to access an array, add or remove from the front, and add or remove from the back?
+- Access is `O(1)`
+- Adding or removing from the front is `O(1)`
+- Adding or removing from the back is `O(n)`
+
 * What is the worse case scenario if you try to extend the storage size of a dynamic array?
+- `O(n)`
 
 Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
- 
-Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
+- A Blockchain is structured by a chain of blocks, and those blocks can have transactions.
+- A Blockchain chain is a list of all blocks mined so far.
+- A Block is a piece of data in the chain that tells us:
+    - Index - the number of the block in the chain, starting at 0 or 1, depending on the chain.
+    - Timestamp - the time at which the block was created. This is not required, but is often useful.
+    - Transactions - the monetary transactions, or any type of data, that is proofed by the block.
+    - Proof - the proof for this block. We’ll get into this later.
+    - Previous Hash - the hash of the previous block.
 
+Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
+- A Blockchain's proof of work function attempts to find the required proof to mine the next block in the chain. It does this by adhering to a specific set of instructions and attempting to solve an arbitrarily difficult problem until those instructions are met and has found a valid proof. If the proof is valid and the first one to be submitted, a new block will be forged and therefore we will have mined a block. 
+- Proof of work secures the chain by making it nearly computationally impossible to cheat, because the cheater would have to do a greater amount of work than everyone else.
 ## Project Set Up
 
 #### [Hash Tables]
@@ -62,6 +76,3 @@ Your goal is to mine at least one coin.  Keep in mind that with many people comp
 | diagram and code a simple blockchain, utilizing a cryptographic hash                                            | Interview Question | The student fully explains two or fewer of the bulleted items in the solution repo\. | The student fully explains at least 3 of the items in the bulleted list\.                                | The student fully explains 4 or more items from the bulleted list\.           |
 | utilize a Proof of Work process to protect a blockchain from attack                                             | Blockchain Problem | The student is unable to mine a coin before the end of lunch.                                                               | The student was able to mine a coin before the end of lunch.                                                                   | The student presented a unique solution that was able to mine more than 100 coins before the end of lunch.                                            |
 | build a protocol to allow nodes in a blockchain network to communicate to share blocks and determine consensus. | Interview Question | The student fully explains two or fewer of the bulleted items in the solution repo\. | The student fully explains at least 3 of the items in the bulleted list\.                                | The student fully explains 4 or more items from the bulleted list\.           |
-
-## Grading
-The grade for this sprint challenge is the average of the number of points received (points/15)
